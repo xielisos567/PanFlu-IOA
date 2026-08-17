@@ -67,9 +67,11 @@ mafft --version
 
 #### Clone the repository
 git clone https://github.com/xielisos567/PanFlu-IOA.git
+
 cd PanFlu-IOA
 #### (Recommended) Create and activate a Python virtual environment
 python3 -m venv panflu_env
+
 source panflu_env/bin/activate  # Linux/macOS
 #### or using mamba: 
 mamba create -n panflu python=3.8 && mamba activate panflu
@@ -126,5 +128,7 @@ This project is distributed under the MIT License. See the LICENSE file for deta
 
 ## Contact
 Hongyang Shi (13918445114@163.com)
+
 Shulei Jia (jiashu320lei@126.com)
+
 School of Basic Medical Sciences, Tianjin Medical University, Tianjin, 300070, China
