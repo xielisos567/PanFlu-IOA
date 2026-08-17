@@ -64,7 +64,7 @@ brew install mafft
 # Verify installation
 mafft --version
 
-2. Clone the repository and install Python dependencies
+### 2. Clone the repository and install Python dependencies
 # Clone the repository
 git clone https://github.com/[your-username]/PanFlu-IOA.git
 cd PanFlu-IOA
@@ -80,7 +80,7 @@ pip install pandas numpy biopython
 # Verify installation
 python -c "import pandas, numpy, Bio; print('All dependencies installed.')"
 
-Demo
+## Demo
 A test_data folder is provided in the repository, containing sample FASTA sequence files for demonstration.
 
 Run with provided test_data
@@ -108,7 +108,7 @@ Mode 1 (5 iterations): ~1–2 minutes
 Mode 2: ~2–3 minutes
 (Actual time depends on MAFFT alignment speed.)
 
-Instructions for Use
+## Instructions for Use
 Basic usage (Mode 1)
 python PanFlu-IOA_code1.py -i <input_dir> -o <output_dir> -t <iterations> -p <parallel_jobs>
 
@@ -125,10 +125,10 @@ Output files
 
 *.stat.xls-tab‑separated file with columns: Cons_seq (consensus residue), Cons_count (number of sequences supporting that residue), and Cons_ratio (percentage support).
 
-License
+## License
 This project is distributed under the MIT License. See the LICENSE file for details.
 
-Contact
+## Contact
 Hongyang Shi (13918445114@163.com)
 Shulei Jia (jiashu320lei@126.com)
 School of Basic Medical Sciences, Tianjin Medical University, Tianjin, 300070, China
