@@ -53,7 +53,6 @@ The package has been tested on:
 ### 1. Install MAFFT
 MAFFT is **required** before running PanFlu-IOA.
 
-```bash
 # Ubuntu/Debian
 sudo apt update
 sudo apt install mafft
@@ -65,6 +64,7 @@ brew install mafft
 mafft --version
 
 ### 2. Clone the repository and install Python dependencies
+
 # Clone the repository
 git clone https://github.com/[your-username]/PanFlu-IOA.git
 cd PanFlu-IOA
