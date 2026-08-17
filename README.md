@@ -53,46 +53,42 @@ The package has been tested on:
 ### 1. Install MAFFT
 MAFFT is **required** before running PanFlu-IOA.
 
-# Ubuntu/Debian
+#### Ubuntu/Debian
 sudo apt update
 sudo apt install mafft
 
-# macOS (using Homebrew)
+#### macOS (using Homebrew)
 brew install mafft
 
-# Verify installation
+#### Verify installation
 mafft --version
 
 ### 2. Clone the repository and install Python dependencies
 
-# Clone the repository
-git clone https://github.com/[your-username]/PanFlu-IOA.git
+#### Clone the repository
+git clone https://github.com/xielisos567/PanFlu-IOA.git
 cd PanFlu-IOA
-
-# (Recommended) Create and activate a Python virtual environment
+#### (Recommended) Create and activate a Python virtual environment
 python3 -m venv panflu_env
 source panflu_env/bin/activate  # Linux/macOS
-# or using conda: conda create -n panflu python=3.8 && conda activate panflu
-
-# Install required Python packages
+#### or using mamba: 
+mamba create -n panflu python=3.8 && mamba activate panflu
+#### Install required Python packages
 pip install pandas numpy biopython
-
-# Verify installation
+#### Verify installation
 python -c "import pandas, numpy, Bio; print('All dependencies installed.')"
 
 ## Demo
 A test_data folder is provided in the repository, containing sample FASTA sequence files for demonstration.
 
-Run with provided test_data
-Run Mode 1 (iterative optimisation)
-# -t 5: 5 iterations, -p 2: use 2 parallel processes
+### Run with provided test_data
+#### Run Mode 1 (iterative optimisation),-t 5: 5 iterations, -p 2: use 2 parallel processes
 python PanFlu-IOA_code1.py -i ./test_data -o ./result_mode1 -t 5 -p 2
-Run Mode 2 (two‑stage subsampling)
-# -n 30,150: 30 sequences in stage 1, 150 in stage 2
+#### Run Mode 2 (two‑stage subsampling),-n 30,150: 30 sequences in stage 1, 150 in stage 2
 python PanFlu-IOA_code2.py -i ./test_data -o ./result_mode2 -p 2 -n 30,150
-Expected output & run time
-Expected output:
 
+### Expected output & run time
+#### Expected output:
 Intermediate files: .extract.fasta, .aln.fasta
 
 Consensus files: .cons.fasta
@@ -101,7 +97,7 @@ Statistics files: .stat.xls (tab‑separated, with columns Cons_seq, Cons_count,
 
 Final results are placed in the final subdirectory.
 
-Expected run time on a normal desktop computer (4‑core CPU, using provided test_data with ~10 files × 100 sequences each):
+#### Expected run time on a normal desktop computer (4‑core CPU, using provided test_data with ~10 files × 100 sequences each):
 
 Mode 1 (5 iterations): ~1–2 minutes
 
@@ -109,18 +105,18 @@ Mode 2: ~2–3 minutes
 (Actual time depends on MAFFT alignment speed.)
 
 ## Instructions for Use
-Basic usage (Mode 1)
+#### Basic usage (Mode 1)
 python PanFlu-IOA_code1.py -i <input_dir> -o <output_dir> -t <iterations> -p <parallel_jobs>
 
-Basic usage (Mode 2)
+#### Basic usage (Mode 2)
 python PanFlu-IOA_code2.py -i <input_dir> -o <output_dir> -p <parallel_jobs> -n <stage1_count,stage2_count>
 
-Input data format
+#### Input data format
 The input directory must contain FASTA files with extension .fa or .fasta.
 
 Sequences can be nucleotide or protein.
 
-Output files
+#### Output files
 *.cons.fasta-final consensus sequence (gap‑rich positions removed).
 
 *.stat.xls-tab‑separated file with columns: Cons_seq (consensus residue), Cons_count (number of sequences supporting that residue), and Cons_ratio (percentage support).
